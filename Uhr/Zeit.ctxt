@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Zeit
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Zeit\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=stunde\ minute\ sekunde
+comment1.target=Zeit(int,\ int,\ int)
+comment2.params=richtung
+comment2.target=void\ erhoehen(boolean)
+comment3.params=
+comment3.target=int\ gibStunden()
+comment4.params=
+comment4.target=int\ gibMinuten()
+comment5.params=
+comment5.target=int\ gibSekunden()
+comment6.params=stunde\ minute\ sekunde
+comment6.target=void\ setZeit(int,\ int,\ int)
+numComments=7

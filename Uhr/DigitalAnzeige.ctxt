@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=DigitalAnzeige
+comment1.params=
+comment1.target=DigitalAnzeige()
+comment2.params=stunden\ minuten\ sekunden
+comment2.target=void\ setzeZeit(int,\ int,\ int)
+numComments=3

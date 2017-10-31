@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Uhr
+comment1.params=
+comment1.target=Uhr()
+comment2.params=
+comment2.target=void\ takt()
+comment3.params=args
+comment3.target=void\ main(java.lang.String[])
+comment4.params=
+comment4.target=void\ stopGo()
+comment5.params=
+comment5.target=void\ richtungAendern()
+numComments=6
