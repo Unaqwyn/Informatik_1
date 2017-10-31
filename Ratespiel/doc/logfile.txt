@@ -1,0 +1,44 @@
+Class documentation
+<---- javadoc command: ---->
+C:\Program Files (x86)\BlueJ\jdk\bin\javadoc.exe
+-author
+-version
+-nodeprecated
+-package
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+1.8
+-classpath
+C:\Program Files (x86)\BlueJ\lib\bluejcore.jar;C:\Program Files (x86)\BlueJ\lib\junit-4.11.jar;C:\Program Files (x86)\BlueJ\lib\hamcrest-core-1.3.jar;C:\Program Files (x86)\BlueJ\lib\lang-stride.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-core.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-device.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-gpio-extension.jar;C:\Program Files (x86)\BlueJ\lib\userlib\pi4j-service.jar;\\fs003\stud\rjaeger\Desktop\IIW_In_1\Uebungen\Ratespiel
+-d
+\\fs003\stud\rjaeger\Desktop\IIW_In_1\Uebungen\Ratespiel\doc
+-encoding
+UTF-8
+-charset
+UTF-8
+-docletpath
+C:\Program Files (x86)\BlueJ\lib\bjdoclet.jar
+-doclet
+bluej.doclet.doclets.formats.html.HtmlDoclet
+\\fs003\stud\rjaeger\Desktop\IIW_In_1\Uebungen\Ratespiel\Ratespiel.java
+<---- end of javadoc command ---->
+Loading source file \\fs003\stud\rjaeger\Desktop\IIW_In_1\Uebungen\Ratespiel\Ratespiel.java...
+Constructing Javadoc information...
+Standard Doclet version 1.8.0_121
+Building tree for all the packages and classes...
+Generating \\fs003\stud\rjaeger\Desktop\IIW_In_1\Uebungen\Ratespiel\doc\Ratespiel.html...
+\\fs003\stud\rjaeger\Desktop\IIW_In_1\Uebungen\Ratespiel\Ratespiel.java:28: warning - @param argument "y" is not a parameter name.
+\\fs003\stud\rjaeger\Desktop\IIW_In_1\Uebungen\Ratespiel\Ratespiel.java:28: warning - @return tag cannot be used in method with void return type.
+Generating \\fs003\stud\rjaeger\Desktop\IIW_In_1\Uebungen\Ratespiel\doc\package-frame.html...
+Generating \\fs003\stud\rjaeger\Desktop\IIW_In_1\Uebungen\Ratespiel\doc\package-summary.html...
+Generating \\fs003\stud\rjaeger\Desktop\IIW_In_1\Uebungen\Ratespiel\doc\constant-values.html...
+Building index for all the packages and classes...
+Building index for all classes...
+Generating \\fs003\stud\rjaeger\Desktop\IIW_In_1\Uebungen\Ratespiel\doc\allclasses-frame.html...
+Generating \\fs003\stud\rjaeger\Desktop\IIW_In_1\Uebungen\Ratespiel\doc\allclasses-noframe.html...
+Generating \\fs003\stud\rjaeger\Desktop\IIW_In_1\Uebungen\Ratespiel\doc\index.html...
+Generating \\fs003\stud\rjaeger\Desktop\IIW_In_1\Uebungen\Ratespiel\doc\stylesheet.css...
+2 warnings
