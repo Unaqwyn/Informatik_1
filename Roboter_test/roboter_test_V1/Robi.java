@@ -67,12 +67,23 @@ public class Robi {
                         zustand = RobiFährtRückwärts;
                         System.out.println("Robi fährt rückwärts");
                     }
+                    else
+                    {
+                        if(uhr.abgelaufen())
+                        {
+                            robi.turn(randomSpeed());
+                            uhr.starten(randomTime()+500);
+                            while(!(uhr.abgelaufen()))
+                            {}
+                            robi.drive(5);
+                        }
+                    }
                     break;
                 }
                 case RobiFährtRückwärts: {
                     if (uhr.abgelaufen()) {
-                       robi.turn(randomSpeed());
-                        uhr.starten(randomTime());
+                       robi.turn(directionSpeed());
+                        uhr.starten(randomTime()+500);
                         zustand = RobiDrehtAb;
                         System.out.println("Robi dreht ab");
                     }
@@ -115,7 +126,7 @@ public class Robi {
     private int randomTime()
     {
         Random random=new Random();
-        int randomTime=random.nextInt(1000)+500;
+        int randomTime=random.nextInt(1000);
         return(randomTime);
     }
 
