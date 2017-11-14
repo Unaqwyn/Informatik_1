@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=Robi
+comment0.text=\r\n\ Beispiele\ von\ Robotersteuerprogrammen\r\n\ \r\n\ @author\ NTB\ Zo\r\n\ @version\ 1.2\r\n
+comment1.params=hostname
+comment1.target=Robi(java.lang.String)
+comment1.text=\r\n\ Erzeugt\ ein\ Stellvertreterobjekt\ eines\ Roboters.\ Es\ wird\ dazu\ sofort\ eine\r\n\ Verbindung\ zum\ zu\ steuernden\ Roboter\ hergestellt.\r\n\ \r\n\ @param\ hostname\r\n\ \ \ \ \ \ \ \ \ \ \ \ Hostname\ des\ Roboters,\ z.B.\ robiInf001.ntb.ch\r\n
+comment2.params=hostname\ portNummer
+comment2.target=Robi(java.lang.String,\ int)
+comment2.text=\r\n\ Erzeugt\ ein\ Stellvertreterobjekt\ eines\ realen\ Roboters.\ Es\ wird\ dazu\r\n\ sofort\ eine\ Verbindung\ zum\ realen\ Roboter\ hergestellt.\r\n\ \r\n\ @param\ hostname\r\n\ \ \ \ \ \ \ \ \ \ \ \ Hostname\ des\ Robi,\ z.B.\ robiInf001.ntb.ch\r\n\ @param\ portNumber\r\n\ \ \ \ \ \ \ \ \ \ \ \ Port\ Nummer\ des\ zu\ steuernden,\ z.B.\ 2000\r\n
+comment3.params=maxWandber\u00FChrungen
+comment3.target=void\ planlosFahren(int)
+comment3.text=\r\n\ Der\ Roboter\ f\u00E4hrt\ planlos\ herum.\ Er\ f\u00E4hrt\ zuerst\ geradeaus\ vorw\u00E4rts,\ bis\r\n\ er\ irgendwo\ an\ eine\ Wand\ anst\u00F6sst.\ Danach\ f\u00E4hrt\ er\ ein\ kurzes\ St\u00FCck\r\n\ zur\u00FCck,\ dreht\ an\ Ort\ ab.\ Dann\ beginnt\ der\ n\u00E4chste\ Zyklus.\ Das\ Verfahren\r\n\ ist\ auch\ unter\ dem\ Begriff\ "random\ walk"\ bekannt.\r\n
+comment4.params=
+comment4.target=boolean\ anWand()
+comment5.params=
+comment5.target=void\ bodenSensorWerteAusgeben()
+comment6.params=
+comment6.target=int\ randomTime()
+comment7.params=
+comment7.target=int\ randomSpeed()
+comment8.params=
+comment8.target=int\ directionSpeed()
+numComments=9

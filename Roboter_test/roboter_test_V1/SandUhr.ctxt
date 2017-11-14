@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=SandUhr
+comment0.text=\r\n\ Sanduhren\ dienen\ dazu,\ Verz\u00F6gerungen\ zu\ realisieren.\ Sie\ k\u00F6nnen\ zu\ einem\ bestimmten\ Zeitpunkt\r\n\ unter\ Angabe\ einer\ Laufdauer\ gestartet\ werden.\ Danach\ kann\ die\ Uhr\ gefragt\ werden,\ ob\ ihre\ \r\n\ Laufdauer\ schon\ erreicht\ ist\ oder\ noch\ nicht.\r\n\ \r\n\ @author\ NTB\ Zo\r\n\ @version\ 1.0\r\n
+comment1.params=
+comment1.target=SandUhr()
+comment1.text=\r\n\ Erzeugt\ eine\ Instanz\ der\ Klasse.\r\n
+comment2.params=dauerInMilliSekunden
+comment2.target=void\ starten(int)
+comment2.text=\r\n\ Die\ Sanduhr\ wird\ umgedreht.\r\n\ \r\n\ @param\ \ dauer\ \ \ Die\ Laufzeit\ der\ Sanduhr\ in\ Millisekunden.\r\n
+comment3.params=
+comment3.target=boolean\ abgelaufen()
+comment3.text=\r\n\ Frage,\ ob\ die\ vorgesehene\ Laufzeit\ schon\ erreicht\ worden\ ist\ oder\ nicht.\r\n\ \r\n\ @return\ \ Die\ vorgesehene\ Laufzeit\ ist\ erreicht.\r\n
+numComments=4

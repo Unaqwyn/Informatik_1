@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=hostname
+comment0.target=Verbindung(java.lang.String)
+comment0.text=\r\n\ Eine\ Verbindung\ wird\ erzeugt.\ Die\ Verbindung\ wird\ aber\ noch\ nicht\ hergestellt.\r\n\ Dazu\ muss\ zuerst\ die\ Methode\ verbinden()\ aufgerufen\ werden.\ Die\ Portnummer\ ist\ fix\ eingestellt.\r\n\ \r\n\ @param\ hostname\r\n\ \ \ \ \ \ \ \ \ \ \ \ Der\ Hostname\ des\ Roboters,\ beispielsweise\ robiInf001.ntb.ch\ .\r\n\ \r\n
+comment1.params=hostname\ port
+comment1.target=Verbindung(java.lang.String,\ int)
+comment2.params=
+comment2.target=void\ verbinden()
+comment2.text=\r\n\ Eine\ Verbindung\ wird\ hergestellt.\ Die\ Portnummer\ ist\ fix\ eingestellt.\r\n
+comment3.params=
+comment3.target=void\ trennen()
+comment3.text=\r\n\ Trennen\ der\ Verbindung\ zum\ Robi.\r\n
+numComments=4

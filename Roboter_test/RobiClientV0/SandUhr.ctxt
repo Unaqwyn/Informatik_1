@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=
+comment0.target=SandUhr()
+comment0.text=\r\n\ Erzeugt\ eine\ Instanz\ der\ Klasse.\r\n
+comment1.params=dauerInMilliSekunden
+comment1.target=void\ starten(int)
+comment1.text=\r\n\ Die\ Sanduhr\ wird\ umgedreht.\r\n\ \r\n\ @param\ \ dauer\ \ \ Die\ Laufzeit\ der\ Sanduhr\ in\ Millisekunden.\r\n
+comment2.params=
+comment2.target=boolean\ abgelaufen()
+comment2.text=\r\n\ Frage,\ ob\ die\ vorgesehene\ Laufzeit\ schon\ erreicht\ worden\ ist\ oder\ nicht.\r\n\ \r\n\ @return\ \ Die\ vorgesehene\ Laufzeit\ ist\ erreicht.\r\n
+numComments=3
