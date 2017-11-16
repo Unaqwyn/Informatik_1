@@ -9,6 +9,7 @@ import java.util.Random;
 public class Robi {
 
     private RobiAPI robi;
+    
 
     /**
      * Erzeugt ein Stellvertreterobjekt eines Roboters. Es wird dazu sofort eine
@@ -41,9 +42,11 @@ public class Robi {
      * ist auch unter dem Begriff "random walk" bekannt.
      */
     public void planlosFahren(int maxWandberührungen) {
+        System.out.print('\u000C');
         final int RobiFährtVorwärts = 0;
         final int RobiFährtRückwärts = 1;
         final int RobiDrehtAb = 2;
+        boolean zaehlt=false;
 
         System.out.println("PLANLOS FAHREN");
 
@@ -69,7 +72,8 @@ public class Robi {
                     }
                     else
                     {
-                        if(uhr.abgelaufen())
+                        Random random=new Random();
+                        if(random.nextInt(70000)==10568)
                         {
                             robi.turn(randomSpeed());
                             uhr.starten(randomTime()+500);
@@ -78,6 +82,23 @@ public class Robi {
                             robi.drive(5);
                         }
                     }
+                    /*else if(zaehlt==false)
+                    {
+                        uhr.starten(5*randomTime()+2000);
+                        zaehlt=true;
+                    }
+                    else
+                    {
+                        if(uhr.abgelaufen())
+                        {
+                            robi.turn(randomSpeed());
+                            uhr.starten(randomTime()+500);
+                            while(!(uhr.abgelaufen()))
+                            {}
+                            robi.drive(5);
+                            zaehlt=false;
+                        }
+                    }*/
                     break;
                 }
                 case RobiFährtRückwärts: {
@@ -95,6 +116,7 @@ public class Robi {
                         robi.drive(5);
                         zustand = RobiFährtVorwärts;
                         System.out.println("Robi fährt vorwärts");
+                        zaehlt=false;
                     }
                     break;
                 }
