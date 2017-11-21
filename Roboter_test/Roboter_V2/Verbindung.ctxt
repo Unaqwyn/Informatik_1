@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Verbindung
+comment0.text=\r\n\ Objekte\ dieser\ Klasse\ sind\ die\ Klientenseite\ von\ Verbindungen\ zu\ einem\r\n\ Roboter.\ \u00DCber\ eine\ Verbindung\ wird\ mit\ UTF-8\ Zeichen\ kommuniziert.<br>\r\n\ \r\n\ Der\ Aufruf\ einer\ Robifunktion\ besteht\ aus\ einer\ Textzeile\ mit\ dem\ Namen\ der\r\n\ Funktion\ (z.B.\ gibSensorWerte)\ gefolgt\ von\ allf\u00E4lligen\ Parametern,\r\n\ dargestellt\ als\ Zeichenketten.\ Die\ W\u00F6rter\ sind\ mit\ einem\ Leerzeichnen\r\n\ getrennt.<p>\r\n\ \r\n\ Eine\ Antwort\ ist\ ebenfalls\ eine\ Textzeile,\ die\ alle\ R\u00FCckgabewerte\ enth\u00E4lt.\r\n\ <p>\r\n\ Beispiel\:\ Lesen\ aller\ aktuellen\ Sensorwerte<p>\r\n\ \r\n\ gesendet\ wird\:\ getDistSensorValues<p>\r\n\ empfangen\ wird\:\ 12\ 345\ 678\ 987\ 546<p>\r\n\ \r\n\ @author\ NTB\ Zo\r\n\ @version\ 1.0\r\n
+comment1.params=hostname
+comment1.target=Verbindung(java.lang.String)
+comment1.text=\r\n\ Eine\ Verbindung\ wird\ erzeugt.\ Die\ Verbindung\ wird\ aber\ noch\ nicht\ hergestellt.\r\n\ Dazu\ muss\ zuerst\ die\ Methode\ verbinden()\ aufgerufen\ werden.\ Die\ Portnummer\ ist\ fix\ eingestellt.\r\n\ \r\n\ @param\ hostname\r\n\ \ \ \ \ \ \ \ \ \ \ \ Der\ Hostname\ des\ Roboters,\ beispielsweise\ robiInf001.ntb.ch\ .\r\n\ \r\n
+comment2.params=hostname\ port
+comment2.target=Verbindung(java.lang.String,\ int)
+comment3.params=
+comment3.target=void\ verbinden()
+comment3.text=\r\n\ Eine\ Verbindung\ wird\ hergestellt.\ Die\ Portnummer\ ist\ fix\ eingestellt.\r\n
+comment4.params=
+comment4.target=void\ trennen()
+comment4.text=\r\n\ Trennen\ der\ Verbindung\ zum\ Robi.\r\n
+numComments=5
