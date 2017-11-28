@@ -264,7 +264,7 @@ public class Robi {
         SandUhr generalUhr = new SandUhr();
         generalUhr.starten(zeit);
         robi.getDistSensorValues();
-        if(robi.readSensor(0)>=100^robi.readSensor(1)>=100)
+        if(robi.readSensor(0)<100^robi.readSensor(1)>=100)
         {
             
         }
@@ -357,17 +357,254 @@ public class Robi {
         System.out.println();
     }
     
+    public void wallFollow(int zeit)
+    {
+        System.out.print('\u000C');
+        
+        
+        SandUhr uhr = new SandUhr();
+        robi.verbinden();
+        robi.drive(10);
+        System.out.println("Robi fährt vorwärts");
+        SandUhr generalUhr = new SandUhr();
+        generalUhr.starten(zeit);
+        robi.getDistSensorValues();
+        while(!generalUhr.abgelaufen()&&!anWand())
+        {
+            zickzackFahren();
+            robi.getDistSensorValues();
+        }
+        
+        while(!generalUhr.abgelaufen())
+        {
+            robi.getDistSensorValues();
+            if((robi.readSensor(6)==robi.readSensor(7))&&(whereLight()==6||whereLight()==7))
+            {
+                robi.drive(20);
+            }
+            else if(whereLight()==6)
+            {
+                rechtsKurve();
+            }
+            else if((whereLight()>=7&&whereLight()<=9)||whereLight()==3)
+            {
+                linksKurve();
+            }
+            else
+            {
+                robi.turn(20);
+            }
+        }
+
+        robi.stop();
+        robi.trennen();
+
+        System.out.println("FERTIG");
+        System.out.println();
+    }
+    
+    public void wallFollowCases(int zeit)
+    {
+        System.out.print('\u000C');
+        
+        final int wandSuchen=1;
+        final int anWand=2;
+        final int anEcke=3;
+        int zustand = wandSuchen;
+        
+        SandUhr uhr = new SandUhr();
+        robi.verbinden();
+        robi.drive(10);
+        System.out.println("Robi fährt vorwärts");
+        SandUhr generalUhr = new SandUhr();
+        generalUhr.starten(zeit);
+        robi.getDistSensorValues();
+        while(!generalUhr.abgelaufen())
+        {
+            robi.getDistSensorValues();
+            switch(zustand)
+            {
+                case wandSuchen:
+                {
+                    zickzackFahren();
+                    if(anWand())
+                    {
+                        zustand=anWand;
+                    }
+                    break;
+                }
+                case anWand:
+                {
+                            if(robi.readSensor(2)>=100)
+                            {
+                                robi.turn(20);
+                                zustand=anEcke;
+                            }
+                            else if((robi.readSensor(6)==robi.readSensor(7))&&(whereLight()==6||whereLight()==7))
+                            {
+                               robi.setRightDriveSpeed(19);
+                               robi.setLeftDriveSpeed(20);
+                            }
+                            
+                            else if(whereLight()<=6&&whereLight()>=4)
+                            {
+                                rechtsKurve();
+                            }
+                            else if((whereLight()>=7&&whereLight()<=9)||whereLight()==3)
+                            {
+                                linksKurve();
+                            }
+                            else if(whereLight()>=10&&whereLight()<=15)
+                            {
+                                robi.turn(20);
+                            }
+                            else if(!anWand())
+                            {
+                                zustand=wandSuchen;
+                            }
+                            break;
+                }
+                case anEcke:
+                {
+                    if(robi.readSensor(2)<100)
+                    {
+                        zustand=anWand;
+                    }
+                    break;
+                }
+            }
+            
+        }
+        
+
+
+        robi.stop();
+        robi.trennen();
+
+        System.out.println("FERTIG");
+        System.out.println();
+    }
+    
+    public void obstacleWarten(int zeit)
+    {
+        System.out.print('\u000C');
+        
+        final int hindernis=1;
+        final int keinHindernis=2;
+        int zustand = keinHindernis;
+        
+        SandUhr uhr = new SandUhr();
+        robi.verbinden();
+        robi.drive(10);
+        System.out.println("Robi fährt vorwärts");
+        SandUhr generalUhr = new SandUhr();
+        generalUhr.starten(zeit);
+        robi.getDistSensorValues();
+        while(!generalUhr.abgelaufen())
+        {
+            robi.getDistSensorValues();
+            switch(zustand)
+            {
+                case hindernis:
+                {
+                    if(robi.readSensor(2)<100)
+                    {
+                        zustand=keinHindernis;
+                        robi.drive(10);
+                    }
+                break;
+                }
+                case keinHindernis:
+                {
+                    if(robi.readSensor(2)>=100)
+                    {
+                        zustand=hindernis;
+                        robi.stop();
+                    }
+                break;    
+                }
+            }
+            
+        }
+        
+
+
+        robi.stop();
+        robi.trennen();
+
+        System.out.println("FERTIG");
+        System.out.println();
+    }
+    
+        public void streifen()
+    {
+        System.out.print('\u000C');
+        
+        final int hell=1;
+        final int dunkel=2;
+        int zustand = hell;
+        int streifenzaehlen=0;
+        
+ 
+        robi.verbinden();
+        robi.drive(10);
+        System.out.println("Robi fährt vorwärts");
+
+
+        robi.getDistSensorValues();
+        while(streifenzaehlen!=3)
+        {
+            robi.getDistSensorValues();
+            switch(zustand)
+            {
+                case hell:
+                {
+                    if(robi.readSensor(0)<100)
+                    {
+                        zustand=dunkel;
+                    }
+                break;
+                }
+                case dunkel:
+                {
+                    if(robi.readSensor(0)>=100)
+                    {
+                        zustand=hell;
+                        streifenzaehlen++;
+                    }
+                 
+                break;    
+                }
+        }
+        }
+        
+
+
+        robi.stop();
+        robi.trennen();
+
+        System.out.println("FERTIG");
+        System.out.println();
+    }
+    
     private int whereLight()
     {
         int sensor=2;
-        double max=robi.readSensor(2)*1.5;
+        double max=robi.readSensor(2)+20;
         for (int i = 2; i < 16; i++) {
             if (robi.readSensor(i) > max) {
                 max=robi.readSensor(i);
                 sensor=i;
             }
         }
-        return sensor;
+        if(max>=100)
+        {
+            return sensor;
+        }
+        else
+        {
+            return 2;
+        }
     }
     
     public void zickzackFahren()
@@ -394,15 +631,6 @@ public class Robi {
     {
         robi.setRightDriveSpeed(15);
         robi.setLeftDriveSpeed(20);
-    }
-    
-    private void slotTurn(int slots)
-    {
-        robi.turn(20);
-        SandUhr uhr = new SandUhr();
-        uhr.starten(slots*300);
-        while(!uhr.abgelaufen())
-        {}
     }
 
     public void pendeln()
