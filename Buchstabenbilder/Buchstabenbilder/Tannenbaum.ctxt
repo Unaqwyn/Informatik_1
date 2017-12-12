@@ -6,4 +6,6 @@ comment1.target=Tannenbaum()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Tannenbaum\r\n
 comment2.params=hoehe
 comment2.target=void\ tannenbaum(int)
-numComments=3
+comment3.params=hoehe\ stammHoehe\ stammBreite
+comment3.target=void\ tannenbaum(int,\ int,\ int)
+numComments=4
