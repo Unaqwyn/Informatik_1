@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Beantworter
+comment0.text=\r\n\ Die\ Klasse\ Beantworter\ beschreibt\ Exemplare,\ die\ \r\n\ automatische\ Antworten\ generieren.\r\n\ \r\n\ @author\ \ \ \ \ Michael\ K\u00F6lling\ und\ David\ J.\ Barnes\r\n\ @version\ \ \ \ 0.1\ (2016.02.29)\r\n
+comment1.params=
+comment1.target=Beantworter()
+comment1.text=\r\n\ Erzeuge\ einen\ Beantworter\ -\ nichts\ Besonderes\ zu\ tun.\r\n
+comment2.params=
+comment2.target=java.lang.String\ generiereAntwort()
+comment2.text=\r\n\ Erzeuge\ eine\ Antwort.\r\n\ @return\ \ einen\ String,\ der\ die\ Antwort\ enth\u00E4lt\r\n
+numComments=3

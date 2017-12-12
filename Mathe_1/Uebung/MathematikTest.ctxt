@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=MathematikTest
+comment0.text=\r\n\ Teste\ die\ Klasse\ Mathematik.\r\n\ \r\n\ @author\ Martin\ Studer\r\n\ @version\ 27.11.2011\r\n
+comment1.params=
+comment1.target=MathematikTest()
+comment1.text=\r\n\ Kreiere\ ein\ neues\ MathematikTest.\r\n
+comment2.params=
+comment2.target=void\ durchschnittMitArrayList()
+comment2.text=\r\n\ Teste\ Methode\ durchschnitt.\r\n
+comment3.params=
+comment3.target=void\ durchschnittMitArrays()
+comment3.text=\r\n\ Teste\ Methode\ durchschnitt.\r\n
+comment4.params=
+comment4.target=void\ standardabweichungMitArrayList()
+comment4.text=\r\n\ Teste\ Methode\ standardabweichung.\r\n
+comment5.params=
+comment5.target=void\ standardabweichungMitArrays()
+comment5.text=\r\n\ Teste\ Methode\ standardabweichung.\r\n
+numComments=6

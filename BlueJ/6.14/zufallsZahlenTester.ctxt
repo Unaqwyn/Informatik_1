@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=zufallsZahlenTester
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ zufallsZahlenTester\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=zufallsZahlenTester()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ zufallsZahlenTester\r\n
+comment2.params=
+comment2.target=int\ eineZufallsZahlAusgeben()
+comment3.params=anzahl
+comment3.target=int[]\ zufallsZahlenAusgeben(int)
+comment4.params=
+comment4.target=int\ wuerfeln()
+comment5.params=
+comment5.target=java.lang.String\ gibAntwort()
+comment6.params=max
+comment6.target=int\ eineZufallsZahlAusgeben(int)
+comment7.params=max\ min
+comment7.target=int\ eineZufallsZahlAusgeben(int,\ int)
+comment8.params=
+comment8.target=void\ test()
+numComments=9

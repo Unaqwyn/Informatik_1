@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Kundendienstsystem
+comment0.text=\r\n\ Diese\ Klasse\ implementiert\ ein\ System\ f\u00FCr\ einen\ technischen\r\n\ Kundendienst.\ Das\ System\ kommuniziert\ mit\ dem\ Benutzer\ \u00FCber\ \r\n\ die\ Konsole.\r\n\ \r\n\ Diese\ Klasse\ benutzt\ ein\ Exemplar\ der\ Klasse\ Eingabeleser,\ \r\n\ um\ Eingaben\ vom\ Benutzer\ zu\ lesen,\ und\ ein\ Exemplar\ der\r\n\ Klasse\ Beantworter,\ um\ Antworten\ zu\ generieren.\r\n\ In\ einer\ Schleife\ werden\ Eingaben\ eingelesen\ und\ Antworten\r\n\ auf\ diese\ Eingaben\ generiert,\ bis\ der\ Benutzer\ das\ System\r\n\ verl\u00E4sst.\r\n\ \r\n\ @author\ \ \ \ \ Michael\ K\u00F6lling\ und\ David\ J.\ Barnes\r\n\ @version\ \ \ \ 0.1\ (2016.02.29)\r\n
+comment1.params=
+comment1.target=Kundendienstsystem()
+comment1.text=\r\n\ Erzeuge\ ein\ Kundendienstsystem.\r\n
+comment2.params=
+comment2.target=void\ starten()
+comment2.text=\r\n\ Starte\ das\ System\ f\u00FCr\ den\ technischen\ Kundendienst.\r\n\ Es\ wird\ ein\ Begr\u00FC\u00DFungstext\ ausgegeben\ und\ anschlie\u00DFend\r\n\ ein\ Dialog\ mit\ dem\ Benutzer\ gef\u00FChrt,\ bis\ der\ Benutzer\r\n\ den\ Dialog\ beendet.\r\n
+comment3.params=
+comment3.target=void\ willkommenstextAusgeben()
+comment3.text=\r\n\ Gib\ einen\ Willkommenstext\ auf\ der\ Konsole\ aus.\r\n
+comment4.params=
+comment4.target=void\ abschiedstextAusgeben()
+comment4.text=\r\n\ Gib\ einen\ Abschiedstext\ auf\ der\ Konsole\ aus.\r\n
+numComments=5
