@@ -1,9 +1,21 @@
 #BlueJ class context
 comment0.target=Queens
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Queens\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=Queens()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Queens\r\n
 comment2.params=
 comment2.target=int[]\ nextPosition()
-numComments=3
+comment3.params=
+comment3.target=int[]\ newPosition()
+comment4.params=
+comment4.target=gibPosition()
+comment5.params=p1\ p2
+comment5.target=boolean\ gleichesX(int[],\ int[])
+comment6.params=x1\ p2
+comment6.target=boolean\ gleichesX(int,\ int[])
+comment7.params=p1\ p2
+comment7.target=boolean\ gleichesY(int[],\ int[])
+comment8.params=y1\ p2
+comment8.target=boolean\ gleichesY(int,\ int[])
+comment9.params=p1\ p2
+comment9.target=boolean\ gleicheDiagonale(int[],\ int[])
+numComments=10
