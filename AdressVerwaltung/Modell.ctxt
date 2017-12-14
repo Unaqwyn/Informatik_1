@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Modell
+comment0.text=\r\n\ Die\ Klasse\ Modell\ modelliert\ den\ Kern\ eines\ einfachen\ Fahrkartenautomaten.\r\n\ Dieser\ beschr\u00E4nkt\ sich\ auf\ eine\ einzige\ Fahrkarte.\ \r\n\ Die\ Klasse\ implementiert\ die\ wesentliche\ Logik\ eines\ Fahrkartenautomaten.\ Dazu\r\n\ m\u00FCssen\ einerseits\ passende\ Datenfelder\ vorgesehen\ werden,\ in\ denen\ der\ Zustand,\ \r\n\ beispielsweise\ \r\n\ das\ aktuelle\ Guthaben,\ abgelegt\ werden\ kann.\ Andererseits\ sind\ Methoden\ n\u00F6tig,\ die\ u.a.\ \r\n\ auch\r\n\ notwendige\ Pr\u00FCfungen\ vornehmen.\ Beispielsweise\ kann\ eine\ Fahrkarte\ nur\ gekauft\ werden,\ \r\n\ wenn\ das\ Guthaben\ ausreichend\ ist.\r\n\r\n\ @author\ NTB,\ Ren\u00E9\ Pawlitzek\r\n\ @version\ 8.10.2014\r\n
+comment1.params=fahrkartenPreis\ bezeichnung
+comment1.target=Modell(int,\ java.lang.String)
+comment1.text=\r\n\ Erzeuge\ ein\ Modell\r\n\ @fahrkartenPreis\ Der\ Preis\ der\ Fahrkarte\r\n\ @bezeichnung\ Die\ Bezeichnung\ der\ Fahrkarte,\ z.B.\ Balzers-Buchs\r\n
+comment2.params=
+comment2.target=Modell()
+comment3.params=
+comment3.target=int\ gibPreis()
+comment3.text=\r\n\ Liefere\ den\ Preis\ einer\ Fahrkarte\ in\ Rappen.\r\n
+comment4.params=
+comment4.target=int\ gibGuthaben()
+comment4.text=\r\n\ Liefere\ das\ aktuelle\ Guthaben\ in\ Rappen.\r\n
+comment5.params=betrag
+comment5.target=void\ geldEinwerfen(int)
+comment5.text=\r\n\ Schreibe\ den\ eingeworfenen\ Betrag\ dem\ Guthaben\ zu.\r\n\ @betrag\ \ Eingeworfener\ Betrag\r\n
+comment6.params=
+comment6.target=boolean\ fahrkarteKaufen()
+comment6.text=\r\n\ Kaufe\ eine\ Fahrkarte,\ sofern\ das\ Guthaben\ ausreicht.\ Passe\ das\ Guthaben\ an.\r\n
+comment7.params=
+comment7.target=int\ guthabenAuszahlen()
+comment7.text=\r\n\ Gib\ das\ aktuelle\ Guthaben\ zur\u00FCck\ und\ setzt\ es\ danach\ auf\ Null.\r\n
+comment8.params=
+comment8.target=java.lang.String\ gibBezeichnung()
+comment8.text=\r\n\ Gib\ die\ Bezeichnung\ der\ Fahrkarte\ zur\u00FCck.\r\n
+numComments=9

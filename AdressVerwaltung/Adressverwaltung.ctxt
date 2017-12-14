@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Adressverwaltung
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Adressverwaltung\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Adressverwaltung()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Adressverwaltung\r\n
+comment10.params=
+comment10.target=void\ test()
+comment2.params=vorname\ nachname\ postleitZahl\ wohnOrt
+comment2.target=void\ erfasse(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment3.params=vorname\ nachname\ postleitZahl\ wohnOrt\ strasse\ strassenNummer
+comment3.target=void\ erfasse(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+comment4.params=index
+comment4.target=void\ drucken(int)
+comment5.params=index
+comment5.target=void\ druckenKompakt(int)
+comment6.params=
+comment6.target=void\ drucken()
+comment7.params=
+comment7.target=int\ gibAnzahl()
+comment8.params=nachname
+comment8.target=int\ suchen(java.lang.String)
+comment9.params=nachname
+comment9.target=void\ sucheNachname(java.lang.String)
+numComments=11

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=WoerterbuchTest
+comment0.text=\r\n\ Die\ KLasse\ WoerterbuchTest\ testet\ die\ Klasse\ Woerterbuch.\r\n\ \r\n\ @author\ Martin\ Studer\r\n\ @version\ 27.11.2011\r\n
+comment1.params=
+comment1.target=WoerterbuchTest()
+comment1.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ WoerterbuchTest\r\n
+comment2.params=
+comment2.target=void\ test()
+comment2.text=\r\n\ Teste\ die\ Klasse\ Woerterbuch.\r\n
+numComments=3
