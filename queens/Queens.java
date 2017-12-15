@@ -8,15 +8,11 @@ public class Queens
     ArrayList<int[]> positions;
     int[] positionNew;
     int[] position1;
-    int[] position2;
-    int[] position3;
-    int[] position4;
-    int[] position5;
-    int[] position6;
-    int[] position7;
-    int[] position8;
+    int[] lastRemoved;
+    int[] lastRemoved2;
     boolean nextPosition;
     Random random;
+    ArrayList<Integer> yProbiert;
     
 
     public Queens()
@@ -25,6 +21,46 @@ public class Queens
         positions=new ArrayList<>();
         random=new Random();
         nextPosition=false;
+        for(int i=0;positions.size()<8;i++)
+        {
+            position1=newPosition();
+            if(position1!=null)
+            {
+                positions.add(position1);
+                System.out.println(position1[0]+", "+position1[1]);
+            }
+            else if(position1==null&&positions.get(positions.size()-1)!=lastRemoved)
+            {
+                i--;
+                System.out.println("Removed: "+ positions.get(positions.size()-1)[0]+", "+positions.get(positions.size()-1)[1]);
+                lastRemoved=positions.get(positions.size()-1);
+                positions.remove(positions.size()-1);
+            }
+            else if((position1==null&&positions.get(positions.size()-1)==lastRemoved)&&positions.get(positions.size()-2)!=lastRemoved2)
+            {
+                i=i-2;
+                System.out.println("Removed: "+ positions.get(positions.size()-1)[0]+", "+positions.get(positions.size()-1)[1]);
+                lastRemoved2=positions.get(positions.size()-1);
+                positions.remove(positions.size()-1);
+                System.out.println("Removed: "+ positions.get(positions.size()-1)[0]+", "+positions.get(positions.size()-1)[1]);
+                lastRemoved=positions.get(positions.size()-1);
+                positions.remove(positions.size()-1);
+            }
+            else if(position1==null&&positions.get(positions.size()-1)==lastRemoved)
+            {
+                i=i-3;
+                System.out.println("Removed: "+ positions.get(positions.size()-1)[0]+", "+positions.get(positions.size()-1)[1]);
+                lastRemoved2=positions.get(positions.size()-1);
+                positions.remove(positions.size()-1);
+                System.out.println("Removed: "+ positions.get(positions.size()-1)[0]+", "+positions.get(positions.size()-1)[1]);
+                lastRemoved=positions.get(positions.size()-1);
+                positions.remove(positions.size()-1);
+                System.out.println("Removed: "+ positions.get(positions.size()-1)[0]+", "+positions.get(positions.size()-1)[1]);
+                lastRemoved=positions.get(positions.size()-1);
+                positions.remove(positions.size()-1);
+            }
+        }
+        /*
         position1=newPosition();
         positions.add(position1);
         System.out.println(position1[0]+", "+position1[1]);
@@ -49,6 +85,7 @@ public class Queens
         position8=newPosition();
         positions.add(position8);
         System.out.println(position8[0]+", "+position8[1]);
+        */
     }
 
     private int[] nextPosition()
@@ -57,7 +94,7 @@ public class Queens
         boolean position=true;
         while(nextPosition==false)
         {
-            int[] positionNew={random.nextInt(7),random.nextInt(7)};
+            int[] positionNew={random.nextInt(8)+1,random.nextInt(8)+1};
             for(int i=0;i<positions.size();i++)
             {
                 if(gleichesX(positionNew,positions.get(i)))
@@ -84,19 +121,20 @@ public class Queens
         return positionNew;
     }
     
-    private int[] newPosition()
+    private int[] newPosition2()
     {
         nextPosition=false;
         boolean position=true;
         while(nextPosition==false)
         {
-            int x=random.nextInt(7)+1;
+            position=true;
+            int x=random.nextInt(8)+1;
             int index=0;
             while(index<positions.size())
             {
                 if(gleichesX(x,positions.get(index)))
                 {
-                    x=random.nextInt(7)+1;
+                    x=random.nextInt(8)+1;
                     index=0;
                 }
                 else
@@ -105,12 +143,12 @@ public class Queens
                 }
             }
             index=0;
-            int y=random.nextInt(7)+1;
+            int y=random.nextInt(8)+1;
             while(index<positions.size())
             {
                 if(gleichesY(y,positions.get(index)))
                 {
-                    y=random.nextInt(7)+1;
+                    y=random.nextInt(8)+1;
                     index=0;
                 }
                 else
@@ -139,6 +177,56 @@ public class Queens
         
         
         return positionNew;
+    }
+    
+    private int[] newPosition()
+    {
+        nextPosition=false;
+        boolean position=true;
+        yProbiert=new ArrayList<>();
+        while(nextPosition==false&&yProbiert.size()<8)
+        {
+            position=true;
+            int x=positions.size()+1;
+            int index=0;
+            int y=random.nextInt(8)+1;
+            int yTested=1;
+            if(!yProbiert.contains(y))yProbiert.add(y);
+            while(index<positions.size())
+            {
+                if(gleichesY(y,positions.get(index)))
+                {
+                    y=random.nextInt(8)+1;
+                    yTested++;
+                    if(!yProbiert.contains(y))yProbiert.add(y);
+                    index=0;
+                }
+                else
+                {
+                    index++;
+                }
+            }
+            int[] positionNew={x,y};
+            for(int i=0;i<positions.size();i++)
+            {
+                if(gleicheDiagonale(positionNew, positions.get(i)))
+                {
+                    position=false;
+                }
+                else if(i==positions.size()-1&&position==true)
+                {
+                    nextPosition=true;
+                    return positionNew;
+                }
+            }
+            if(positions.size()==0)
+            {
+                return positionNew;
+            }
+        }
+        
+        
+        return null;
     }
     
     public ArrayList<int[]> gibPosition()
