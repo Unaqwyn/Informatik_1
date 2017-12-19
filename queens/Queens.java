@@ -1,27 +1,26 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-
-
 public class Queens
 {
     ArrayList<int[]> positions;
     int[] positionNew;
     int[] position1;
     int[] lastRemoved;
-    int[] lastRemoved2;
     boolean nextPosition;
     Random random;
+    int cnt;
     ArrayList<Integer> yProbiert;
     
-
     public Queens()
     {
         System.out.print('\u000C');
         positions=new ArrayList<>();
         random=new Random();
         nextPosition=false;
-        for(int i=0;positions.size()<8;i++)
+        lastRemoved=newPosition();
+        cnt=0;
+        while(positions.size()<8)
         {
             position1=newPosition();
             if(position1!=null)
@@ -29,162 +28,46 @@ public class Queens
                 positions.add(position1);
                 System.out.println(position1[0]+", "+position1[1]);
             }
-            else if(position1==null&&positions.get(positions.size()-1)!=lastRemoved)
+            else if(position1==null&&positions.get(positions.size()-1)[1]!=lastRemoved[1])
             {
-                i--;
                 System.out.println("Removed: "+ positions.get(positions.size()-1)[0]+", "+positions.get(positions.size()-1)[1]);
                 lastRemoved=positions.get(positions.size()-1);
                 positions.remove(positions.size()-1);
+                System.out.println(lastRemoved[0]+ " " +lastRemoved[1]);
             }
-            else if((position1==null&&positions.get(positions.size()-1)==lastRemoved)&&positions.get(positions.size()-2)!=lastRemoved2)
+            else if(position1==null&&cnt<=5)
             {
-                i=i-2;
-                System.out.println("Removed: "+ positions.get(positions.size()-1)[0]+", "+positions.get(positions.size()-1)[1]);
-                lastRemoved2=positions.get(positions.size()-1);
+                System.out.println("Removed ..: "+ positions.get(positions.size()-1)[0]+", "+positions.get(positions.size()-1)[1]);
                 positions.remove(positions.size()-1);
-                System.out.println("Removed: "+ positions.get(positions.size()-1)[0]+", "+positions.get(positions.size()-1)[1]);
+                System.out.println("Removed ..: "+ positions.get(positions.size()-1)[0]+", "+positions.get(positions.size()-1)[1]);
                 lastRemoved=positions.get(positions.size()-1);
                 positions.remove(positions.size()-1);
+                cnt++;
             }
-            else if(position1==null&&positions.get(positions.size()-1)==lastRemoved)
+            
+            else if(position1==null)
             {
-                i=i-3;
-                System.out.println("Removed: "+ positions.get(positions.size()-1)[0]+", "+positions.get(positions.size()-1)[1]);
-                lastRemoved2=positions.get(positions.size()-1);
-                positions.remove(positions.size()-1);
-                System.out.println("Removed: "+ positions.get(positions.size()-1)[0]+", "+positions.get(positions.size()-1)[1]);
-                lastRemoved=positions.get(positions.size()-1);
-                positions.remove(positions.size()-1);
-                System.out.println("Removed: "+ positions.get(positions.size()-1)[0]+", "+positions.get(positions.size()-1)[1]);
-                lastRemoved=positions.get(positions.size()-1);
-                positions.remove(positions.size()-1);
+                cnt=0;
+                System.out.println("reset");
+                positions=new ArrayList<>();
             }
         }
-        /*
-        position1=newPosition();
-        positions.add(position1);
-        System.out.println(position1[0]+", "+position1[1]);
-        position2=newPosition();
-        positions.add(position2);
-        System.out.println(position2[0]+", "+position2[1]);
-        position3=newPosition();
-        positions.add(position3);
-        System.out.println(position3[0]+", "+position3[1]);
-        position4=newPosition();
-        positions.add(position4);
-        System.out.println(position4[0]+", "+position4[1]);
-        position5=newPosition();
-        positions.add(position5);
-        System.out.println(position5[0]+", "+position5[1]);
-        position6=newPosition();
-        positions.add(position6);
-        System.out.println(position6[0]+", "+position6[1]);
-        position7=newPosition();
-        positions.add(position7);
-        System.out.println(position7[0]+", "+position7[1]);
-        position8=newPosition();
-        positions.add(position8);
-        System.out.println(position8[0]+", "+position8[1]);
-        */
+    }
+    
+    public void print()
+    {
+        System.out.print('\u000C');
+        for(int i=0;i<8;i++)
+        {
+            System.out.println(positions.get(i)[0]+", "+positions.get(i)[1]);
+        }
     }
 
-    private int[] nextPosition()
-    {
-        nextPosition=false;
-        boolean position=true;
-        while(nextPosition==false)
-        {
-            int[] positionNew={random.nextInt(8)+1,random.nextInt(8)+1};
-            for(int i=0;i<positions.size();i++)
-            {
-                if(gleichesX(positionNew,positions.get(i)))
-                {
-                    position=false;
-                }
-                if(gleichesY(positionNew,positions.get(i)))
-                {
-                    position=false;
-                }
-                if(gleicheDiagonale(positionNew, positions.get(i)))
-                {
-                    position=false;
-                }
-                if(i==positions.size()-1&&position==true)
-                {
-                    nextPosition=true;
-                    return positionNew;
-                }
-            }
-        }
-        
-        
-        return positionNew;
-    }
-    
-    private int[] newPosition2()
-    {
-        nextPosition=false;
-        boolean position=true;
-        while(nextPosition==false)
-        {
-            position=true;
-            int x=random.nextInt(8)+1;
-            int index=0;
-            while(index<positions.size())
-            {
-                if(gleichesX(x,positions.get(index)))
-                {
-                    x=random.nextInt(8)+1;
-                    index=0;
-                }
-                else
-                {
-                    index++;
-                }
-            }
-            index=0;
-            int y=random.nextInt(8)+1;
-            while(index<positions.size())
-            {
-                if(gleichesY(y,positions.get(index)))
-                {
-                    y=random.nextInt(8)+1;
-                    index=0;
-                }
-                else
-                {
-                    index++;
-                }
-            }
-            int[] positionNew={x,y};
-            for(int i=0;i<positions.size();i++)
-            {
-                if(gleicheDiagonale(positionNew, positions.get(i)))
-                {
-                    position=false;
-                }
-                else if(i==positions.size()-1&&position==true)
-                {
-                    nextPosition=true;
-                    return positionNew;
-                }
-            }
-            if(positions.size()==0)
-            {
-                return positionNew;
-            }
-        }
-        
-        
-        return positionNew;
-    }
-    
     private int[] newPosition()
     {
-        nextPosition=false;
         boolean position=true;
         yProbiert=new ArrayList<>();
-        while(nextPosition==false&&yProbiert.size()<8)
+        while(yProbiert.size()<8)
         {
             position=true;
             int x=positions.size()+1;
@@ -215,7 +98,6 @@ public class Queens
                 }
                 else if(i==positions.size()-1&&position==true)
                 {
-                    nextPosition=true;
                     return positionNew;
                 }
             }
@@ -224,7 +106,6 @@ public class Queens
                 return positionNew;
             }
         }
-        
         
         return null;
     }
@@ -280,5 +161,58 @@ public class Queens
             return true;
         }
         return false;
+    }
+    
+    public boolean testX()
+    {
+        for(int i=0;i<positions.size();i++)
+        {
+            for(int j=i+1;j<positions.size();j++)
+            {
+                if(positions.get(i)[0]==positions.get(j)[0])
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
+    public boolean testY()
+    {
+        for(int i=0;i<positions.size();i++)
+        {
+            for(int j=i+1;j<positions.size();j++)
+            {
+                if(positions.get(i)[1]==positions.get(j)[1])
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
+    public boolean testDiagonale()
+    {
+        for(int i=0;i<positions.size();i++)
+        {
+            for(int j=i+1;j<positions.size();j++)
+            {
+                double dX=positions.get(i)[0]-positions.get(j)[0];
+                double dY=positions.get(i)[1]-positions.get(j)[1];
+                double d=dX/dY;
+                if(d*d==1)
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
+    public boolean test()
+    {
+        return ((testX()&&testY())&&testDiagonale());
     }
 }
