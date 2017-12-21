@@ -110,6 +110,53 @@ public class Mathematik
         return root;
     }
     
+        public double root(int n,double zahl)
+    {
+        if(zahl<0&&n%2==0)
+        {
+            System.out.println("Keine Lösung in R.");
+            return 0;
+        }
+        double root=0;
+        if(zahl>=0)
+        {
+            double max=zahl;
+            double min=0.0;
+            root=(min+max)/2;
+            while(!(((power(root, n))>=(zahl*0.9999999999999))&&((power(root, n)<=(zahl*1.0000000000001)))))
+            {
+                root=(min+max)/2;
+                if((power(root, n)>zahl))
+                {
+                    max=root;
+                }
+                else if((power(root, n)<zahl))
+                {
+                    min=root;
+                }
+            }   
+        }
+        else if(zahl<0)
+        {
+            double max=zahl;
+            double min=0.0;
+            root=(min+max)/2;
+            while(!(((power(root, n))<=(zahl*0.9999999999999))&&((power(root, n)>=(zahl*1.0000000000001)))))
+            {
+                root=(min+max)/2;
+                if((power(root, n)<zahl))
+                {
+                    max=root;
+                }
+                else if((power(root, n)>zahl))
+                {
+                    min=root;
+                }
+            } 
+        }
+        return root;
+    }
+    
     public double sin(double zahl)
     {
         if(zahl>0)
