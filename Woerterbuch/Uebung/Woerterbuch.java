@@ -15,10 +15,10 @@ public class Woerterbuch
 {
    // TODO: Hier kommen Ihr(e) Datenfeld(er)
    
-   ArrayList<String> englischeWoerter;
-   ArrayList<String> deutscheWoerter;
-   private Scanner scanner;
-   private Random random;
+    ArrayList<String> englischeWoerter;
+    ArrayList<String> deutscheWoerter;
+    private Scanner scanner;
+    private Random random;
 
     /**
      * Konstruktor für Objekte der Klasse Woerterbuch
