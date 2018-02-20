@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Force
+comment1.params=a\ f
+comment1.target=Force(double,\ double)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Force\r\n
+comment2.params=
+comment2.target=double\ getFX()
+comment3.params=
+comment3.target=double\ getFY()
+comment4.params=
+comment4.target=double\ getF()
+comment5.params=
+comment5.target=double\ getAlpha()
+numComments=6

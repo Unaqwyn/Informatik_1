@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Test
+comment1.params=
+comment1.target=Test()
+comment10.params=a
+comment10.target=void\ aufsteigendSortierenV3(int[])
+comment11.params=a
+comment11.target=int\ medianwert(int[])
+comment2.params=
+comment2.target=void\ test()
+comment3.params=a
+comment3.target=void\ ausgeben(int[])
+comment4.params=a
+comment4.target=int\ minimum(int[])
+comment5.params=a
+comment5.target=int\ maximum(int[])
+comment6.params=a
+comment6.target=double\ mittelwert(int[])
+comment7.params=a
+comment7.target=void\ gr\u00F6ssterNachRechts(int[])
+comment8.params=a
+comment8.target=void\ aufsteigendSortierenV1(int[])
+comment9.params=a
+comment9.target=void\ aufsteigendSortierenV2(int[])
+numComments=12
