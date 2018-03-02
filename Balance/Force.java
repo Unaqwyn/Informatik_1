@@ -7,16 +7,18 @@ public class Force
     private double fY;
     private double alpha;
     private double f;
+    private double m;
 
     /**
      * Constructor for objects of class Force
      */
-    public Force(double a, double f)
+    public Force(double a, double f, double r)
     {
        alpha=a*Math.PI;
        this.f=f;
        fX=f*Math.cos(alpha);
        fY=f*Math.sin(alpha);
+       m=r*f;
     }
     
     public double getFX()
@@ -37,5 +39,10 @@ public class Force
     public double getAlpha()
     {
         return alpha;
+    }
+    
+    public double getM()
+    {
+        return m;
     }
 }

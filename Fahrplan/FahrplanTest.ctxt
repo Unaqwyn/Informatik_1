@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=FahrplanTest
+comment0.text=\r\n\ Teste\ die\ Klasse\ Fahrplan.\r\n\ \r\n\ @author\ Martin\ Studer\r\n\ @version\ 30.11.2011\r\n
+comment1.params=
+comment1.target=FahrplanTest()
+comment1.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ FahrplanTest\r\n
+comment2.params=ort\ stunde\ minute
+comment2.target=void\ zugNach(java.lang.String,\ int,\ int)
+comment2.text=\r\n\ \r\n
+numComments=3

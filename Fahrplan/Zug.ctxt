@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Zug
+comment1.params=zeit\ gleis\ ort
+comment1.target=Zug(Zeit,\ int,\ java.util.ArrayList)
+comment2.params=zeit\ gleis\ ort
+comment2.target=Zug(Zeit,\ int,\ java.lang.String)
+comment3.params=
+comment3.target=void\ drucke()
+comment4.params=
+comment4.target=java.util.ArrayList\ getOrte()
+comment5.params=
+comment5.target=java.lang.String\ toStringOrt()
+comment6.params=
+comment6.target=Zeit\ getZeit()
+comment7.params=
+comment7.target=int\ gibMin()
+comment8.params=
+comment8.target=int\ gibH()
+comment9.params=
+comment9.target=int\ gibGleis()
+numComments=10
