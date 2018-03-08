@@ -347,9 +347,36 @@ public class Bild {
      * @param suchbild das Bild, das durchsucht wird
      * @param template das Bild, das gesucht wird
      */
-    public void bild_templatematching(Bild suchbild, Bild template) {
+    public Bild bild_templatematching(Bild suchbild, Bild template) {
+        int[][] kopie=new int[suchbild.gibBreite()-template.gibBreite()][suchbild.gibHoehe()-template.gibHoehe()];
+        for(int i=0;i<kopie.length;i++)
+        {
+            for(int j=0;j< kopie[0].length;j++)
+            {
+                kopie[i][j]=getDiff(suchbild, template, i,j);
+            }
+        }
+        Bild diff=new Bild("diff", kopie);
+        return diff;
     }
         
+    public int getDiff(Bild suchbild, Bild template, int posI, int posJ)
+    {
+        int diff=0;
+        for(int i=0;i<template.gibBilddaten().length;i++)
+        {
+            for(int j=0;j<template.gibBilddaten()[0].length;j++)
+            {
+                double x=(suchbild.gibIntensitaetswert(posI+i,posJ+j)-template.gibIntensitaetswert(i,j));
+                x=Math.pow(x,2);
+                diff+=x;
+            }
+        }
+        diff=(int) Math.sqrt(diff);
+        diff/=10;
+        if(diff>255) diff=255;
+        return diff;
+    }
     
     /**
      * Aufgabe: Geometrische Transformation: Rotation. Beachten Sie, dass das Rotationszentrum zuerst in den Ursprung geschoben, dann rotiert und wieder zurueckgeschoben werden muss.
@@ -359,7 +386,34 @@ public class Bild {
      * @param rotationszentrumZeile die v-Position des Rotationszentrums
      * @param winkel der Rotationswinkel (Achtung in Radian)
      */
-    public void bild_rotation(Bild eingangsbild, int rotationszentrumSpalte, int rotationszentrumZeile, double winkel) {
+    public Bild bild_rotation(Bild eingangsbild, int rotationszentrumSpalte, int rotationszentrumZeile, double winkel) {
+        double x=Math.pow(eingangsbild.gibBreite(),2)+Math.pow(eingangsbild.gibHoehe(), 2);
+        x=Math.sqrt(x);
+        int y=1+(int) x;
+        int[][] bildNew= new int[y][y];
+        for(int i=0;i<eingangsbild.gibHoehe();i++)
+        {
+            for(int j=0;j<eingangsbild.gibBreite();j++)
+            {
+                double posI=i-rotationszentrumZeile;
+                double posJ=j-rotationszentrumSpalte;
+                double posI2=posI*Math.cos(winkel)+posJ*Math.sin(winkel);
+                posJ= -1*posI*Math.sin(winkel)+posJ*Math.cos(winkel);
+                posI=posI2+(y/2);
+                posJ+=(y/2);
+                if(bildNew[(int) posI][(int) posJ]==0)
+                {
+                    bildNew[(int) posI][(int) posJ]=eingangsbild.gibIntensitaetswert(i,j);
+                }
+                else if(bildNew[(int) posI][(int) posJ]!=0)
+                {
+                    bildNew[(int) posI][(int) posJ]=(bildNew[(int) posI][(int) posJ]+eingangsbild.gibIntensitaetswert(i,j))/2;
+                }
+                
+            }
+        }
+        Bild newBild=new Bild("gedreht", bildNew);
+        return newBild;
     }
 
     /**
@@ -369,7 +423,42 @@ public class Bild {
      * @param rmax der maximale Radius, bis wohin gedreht wird
      * @param alpha der Rotationswinkel (Achtung in Radian)
      */
-    public void bild_twirl(Bild eingangsbild, int rmax, double alpha) {
+    public Bild bild_twirl(Bild eingangsbild, int rmax, double alpha) {
+        double x=Math.pow(eingangsbild.gibBreite(),2)+Math.pow(eingangsbild.gibHoehe(), 2);
+        x=Math.sqrt(x);
+        int y=1+(int) x;
+        int[][] bildNew= new int[y][y];
+        for(int i=0;i<eingangsbild.gibHoehe();i++)
+        {
+            for(int j=0;j<eingangsbild.gibBreite();j++)
+            {
+                double posI=i-eingangsbild.gibHoehe()/2+1;
+                double posJ=j-eingangsbild.gibBreite()/2+1;
+                if(Math.pow(posI,2)+Math.pow(posJ,2)<=Math.pow(rmax,2))
+                {
+                    double k=(Math.pow(rmax,2)-(Math.pow(posI,2)+Math.pow(posJ,2)))/Math.pow(rmax,2);
+                    alpha=alpha*k;
+                double posI2=posI*Math.cos(alpha)+posJ*Math.sin(alpha);
+                posJ= -1*posI*Math.sin(alpha)+posJ*Math.cos(alpha);
+                posI=posI2+(eingangsbild.gibHoehe()/2+1);
+                posJ+=(eingangsbild.gibBreite()/2+1);
+                if(bildNew[(int) posI][(int) posJ]==0)
+                {
+                    bildNew[(int) posI][(int) posJ]=eingangsbild.gibIntensitaetswert(i,j);
+                }
+                else if(bildNew[(int) posI][(int) posJ]!=0)
+                {
+                    bildNew[(int) posI][(int) posJ]=(bildNew[(int) posI][(int) posJ]+eingangsbild.gibIntensitaetswert(i,j))/2;
+                }
+            }
+            else
+            {
+                bildNew[i][j]=eingangsbild.gibIntensitaetswert(i,j);
+            }
+            }
+        }
+        Bild newBild=new Bild("gedreht", bildNew);
+        return newBild;
     }
 
 }

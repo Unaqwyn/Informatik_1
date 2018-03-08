@@ -317,9 +317,9 @@ public class Bildbetrachter extends JFrame
                     Bild kopie = aktuellesBild.erstelleKopie();
                     Bild bild =  bildOeffnen("Template auswählen");
                     if (bild != null) {
-                        kopie.bild_templatematching(aktuellesBild, bild);
+                        setzeBild(kopie.bild_templatematching(aktuellesBild, bild));
                         kopie.bild_kontrastOptimieren(); 
-                        setzeBild(kopie);
+                        
                     }
                 });        
         tb.add(b);
@@ -328,7 +328,7 @@ public class Bildbetrachter extends JFrame
         b.addActionListener(e -> { 
                     String eingabe = JOptionPane.showInputDialog("Winkel (in Radian)?"); 
                     Bild kopie = aktuellesBild.erstelleKopie();
-                    kopie.bild_rotation(aktuellesBild, aktuellesBild.gibBreite()/2, aktuellesBild.gibHoehe()/2, Double.parseDouble(eingabe));
+                    kopie=kopie.bild_rotation(aktuellesBild, aktuellesBild.gibBreite()/2, aktuellesBild.gibHoehe()/2, Double.parseDouble(eingabe));
                     setzeBild(kopie);
                 });        
         tb.add(b);
@@ -336,7 +336,7 @@ public class Bildbetrachter extends JFrame
         b = new JButton("Twirl");
         b.addActionListener(e -> { 
                     Bild kopie = aktuellesBild.erstelleKopie();
-                    kopie.bild_twirl(aktuellesBild, (int)(0.9*aktuellesBild.gibBreite()/2), Math.PI/4);
+                    kopie=kopie.bild_twirl(aktuellesBild, (int)(0.9*aktuellesBild.gibBreite()/2), Math.PI/4);
                     setzeBild(kopie);
                 });        
         tb.add(b);
