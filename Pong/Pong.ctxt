@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Pong
+comment1.params=
+comment1.target=Pong()
+comment2.params=
+comment2.target=void\ init()
+comment3.params=x\ y
+comment3.target=void\ setBallPos(int,\ int)
+comment4.params=x
+comment4.target=void\ setPaddlePos(int)
+numComments=5
