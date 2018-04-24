@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Const
+comment1.params=
+comment1.target=Const()
+comment2.params=difficulty
+comment2.target=void\ setDiff(int)
+numComments=3

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=BombMap
+comment1.params=
+comment1.target=BombMap()
+comment2.params=
+comment2.target=int[][]\ getValues()
+comment3.params=
+comment3.target=void\ generateBombs()
+comment4.params=
+comment4.target=void\ generateValues()
+comment5.params=x\ y
+comment5.target=int\ val(int,\ int)
+numComments=6

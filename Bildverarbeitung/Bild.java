@@ -192,6 +192,31 @@ public class Bild {
             }
         }
     }
+    
+    public void rahmen(int rahmen)
+    {
+        for(int i=0;i<bild.length;i++)
+        {
+            for(int j=0;j<bild[0].length;j++)
+            {
+                if(i<rahmen||j<rahmen||(bild.length-i)<rahmen||(bild[0].length-j)<rahmen)
+                {
+                    bild[i][j]=0;
+                }
+            }
+        }
+    }
+    
+    public void scrollen(int zeilen)
+    {
+        for(int i=0;i<bild.length;i++)
+        {
+            for(int j=0;j<bild[0].length;j++)
+            {
+                
+            }
+        }
+    }
 
     /**
      * Aufgabe: Kontrast um einen Faktor erhöhen 
@@ -255,12 +280,21 @@ public class Bild {
      * @param eingangsbild das Bild, das gefiltert wird
      */
     public void bild_mittelwertfilter(Bild eingangsbild) {
-        for(int i=0;i<bild.length;i++)
+        int[] speicher=new int[bild[0].length];
+        for(int k=0;k<bild[0].length;k++)
+        {
+            speicher[k]=bild[bild.length][k];
+        }
+        for(int i=0;i<bild.length-1;i++)
         {
             for(int j=0;j<bild[0].length;j++)
             {
-                bild[i][j]=mittelwert(i,j);
+                bild[i][j]=bild[i+1][j];
             }
+        }
+        for(int l=0;l<bild[0].length;l++)
+        {
+            bild[0][l]=speicher[l];
         }
     }
     
@@ -424,37 +458,34 @@ public class Bild {
      * @param alpha der Rotationswinkel (Achtung in Radian)
      */
     public Bild bild_twirl(Bild eingangsbild, int rmax, double alpha) {
-        double x=Math.pow(eingangsbild.gibBreite(),2)+Math.pow(eingangsbild.gibHoehe(), 2);
-        x=Math.sqrt(x);
-        int y=1+(int) x;
-        int[][] bildNew= new int[y][y];
-        for(int i=0;i<eingangsbild.gibHoehe();i++)
+        int[][] bildNew= new int[eingangsbild.gibBreite()][eingangsbild.gibHoehe()];
+        for(int i=0;i<eingangsbild.gibBreite();i++)
         {
-            for(int j=0;j<eingangsbild.gibBreite();j++)
+            for(int j=0;j<eingangsbild.gibHoehe();j++)
             {
-                double posI=i-eingangsbild.gibHoehe()/2+1;
-                double posJ=j-eingangsbild.gibBreite()/2+1;
-                if(Math.pow(posI,2)+Math.pow(posJ,2)<=Math.pow(rmax,2))
+                double posI=i-eingangsbild.gibBreite()/2;
+                double posJ=j-eingangsbild.gibHoehe()/2;
+                if((Math.pow(posI,2)+Math.pow(posJ,2))<=Math.pow(rmax,2))
                 {
-                    double k=(Math.pow(rmax,2)-(Math.pow(posI,2)+Math.pow(posJ,2)))/Math.pow(rmax,2);
-                    alpha=alpha*k;
-                double posI2=posI*Math.cos(alpha)+posJ*Math.sin(alpha);
-                posJ= -1*posI*Math.sin(alpha)+posJ*Math.cos(alpha);
-                posI=posI2+(eingangsbild.gibHoehe()/2+1);
-                posJ+=(eingangsbild.gibBreite()/2+1);
-                if(bildNew[(int) posI][(int) posJ]==0)
-                {
-                    bildNew[(int) posI][(int) posJ]=eingangsbild.gibIntensitaetswert(i,j);
+                    double k=1-(Math.sqrt((posI*posI+posJ*posJ))/(rmax));
+                    double beta=(alpha*k);
+                    double posI2=posI*Math.cos(beta)+posJ*Math.sin(beta);
+                    posJ= -1*posI*Math.sin(beta)+posJ*Math.cos(beta);
+                    posI=posI2+(eingangsbild.gibBreite()/2);
+                    posJ+=(eingangsbild.gibHoehe()/2);
+                    if(bildNew[(int) posI][(int) posJ]==0)
+                    {
+                        bildNew[(int) posI][(int) posJ]=eingangsbild.gibIntensitaetswert(i,j);
+                    }
+                    else if(bildNew[(int) posI][(int) posJ]!=0)
+                    {
+                        bildNew[(int) posI][(int) posJ]=(bildNew[(int) posI][(int) posJ]+eingangsbild.gibIntensitaetswert(i,j))/2;
+                    }
                 }
-                else if(bildNew[(int) posI][(int) posJ]!=0)
+                else
                 {
-                    bildNew[(int) posI][(int) posJ]=(bildNew[(int) posI][(int) posJ]+eingangsbild.gibIntensitaetswert(i,j))/2;
-                }
-            }
-            else
-            {
                 bildNew[i][j]=eingangsbild.gibIntensitaetswert(i,j);
-            }
+                }
             }
         }
         Bild newBild=new Bild("gedreht", bildNew);

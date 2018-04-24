@@ -2,4 +2,6 @@
 comment0.target=Paddle
 comment1.params=width
 comment1.target=Paddle(int)
-numComments=2
+comment2.params=
+comment2.target=int[]\ getPaddleSize()
+numComments=3

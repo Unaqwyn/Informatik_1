@@ -340,6 +340,24 @@ public class Bildbetrachter extends JFrame
                     setzeBild(kopie);
                 });        
         tb.add(b);
+        
+        b = new JButton("Rahmen");
+        b.addActionListener(e -> { 
+                    String eingabe = JOptionPane.showInputDialog("Rahmenweite in Pixel?"); 
+                    Bild kopie = aktuellesBild.erstelleKopie();
+                    kopie.rahmen((int) Integer.parseInt(eingabe));
+                    setzeBild(kopie);
+                });        
+        tb.add(b);
+        
+        b = new JButton("Scrollen");
+        b.addActionListener(e -> { 
+                    String eingabe = JOptionPane.showInputDialog("Scrollen in Pixel?"); 
+                    Bild kopie = aktuellesBild.erstelleKopie();
+                    kopie.scrollen((int) Integer.parseInt(eingabe));
+                    setzeBild(kopie);
+                });        
+        tb.add(b);
 
         fenster.add(tb, BorderLayout.NORTH);
     }
