@@ -10,6 +10,11 @@ public class ScreenPlay extends Screen
     {
         playarea=new PlayArea(bombMap);
         ui=new PlayUI();
+        
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        add(ui);
+        add(playarea);
+        
     }
 
 }

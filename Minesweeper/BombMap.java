@@ -12,6 +12,7 @@ public class BombMap
     {
         random = new Random();
         generateBombs();
+        generateValues();
     }
     
     public int[][] getValues()
@@ -43,7 +44,7 @@ public class BombMap
         values=new int[Const.size][Const.size];
         for(int i=0;i<bombs.length;i++)
         {
-            values[bombs[i]/Const.size][bombs[i]%Const.size]=-1;
+            values[bombs[i]%Const.size][bombs[i]/Const.size]=-1;
         }
         for(int y=0;y<Const.size;y++)
         {
@@ -74,7 +75,7 @@ public class BombMap
                 ++val;
             }
         }
-        if(x<Const.size&&y>0)
+        if(x<Const.size-1&&y>0)
         {
             if(values[x+1][y-1]==-1)
             {
@@ -92,28 +93,28 @@ public class BombMap
         {
                 ++val;
         }
-        if(x<Const.size)
+        if(x<Const.size-1)
         {
             if(values[x+1][y]==-1)
             {
                 ++val;
             }
         }
-        if(x>0&& y<Const.size)
+        if(x>0&& y<Const.size-1)
         {
             if(values[x-1][y+1]==-1)
             {
                 ++val;
             }
         }
-        if(y<Const.size)
+        if(y<Const.size-1)
         {
             if(values[x][y+1]==-1)
             {
                 ++val;
             }
         }
-        if(x<Const.size && y<Const.size)
+        if(x<Const.size-1 && y<Const.size-1)
         {
             if(values[x+1][y+1]==-1)
             {

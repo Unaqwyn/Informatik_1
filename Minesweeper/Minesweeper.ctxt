@@ -2,4 +2,6 @@
 comment0.target=Minesweeper
 comment1.params=
 comment1.target=Minesweeper()
-numComments=2
+comment2.params=screenType
+comment2.target=Minesweeper(int)
+numComments=3

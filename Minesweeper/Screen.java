@@ -1,7 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 
-public abstract class Screen extends JFrame
+public abstract class Screen extends JPanel
 {
     public Screen()
     {
