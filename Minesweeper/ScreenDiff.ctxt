@@ -1,5 +1,7 @@
 #BlueJ class context
 comment0.target=ScreenDiff
-comment1.params=
-comment1.target=ScreenDiff()
-numComments=2
+comment1.params=x
+comment1.target=ScreenDiff(Minesweeper)
+comment2.params=difficulty
+comment2.target=void\ setScreen(int)
+numComments=3

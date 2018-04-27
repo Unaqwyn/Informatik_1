@@ -1,5 +1,6 @@
 import java.awt.*;
 import javax.swing.*;
+import javafx.scene.text.Font;
 
 public class Tile extends JButton
 {
@@ -13,26 +14,38 @@ public class Tile extends JButton
        this.value=value;
        setBackground(Color.gray);
        setBounds(0,0,x,x);
+       setPreferredSize(Const.prefSizeTile);
+       addActionListener(e->flip());
+      
     }
     
-    public void flip()
+    public int flip()
     {
         if(Const.flagging)
         {
             if(flagged&&!flipped)
             {
+                setBackground(Color.gray);
                 flagged=false;
+                return -2;
             }
             else if(!flipped)
             {
+                setBackground(Color.black);
                 flagged=true;
+                return -2;
             }
         }
         else
         {
             if(flagged)
             {
-                
+                return -2;
+            }
+            else if(!Const.firstFlipped)
+            {
+                Const.firstFlipped=true;
+                return -3;
             }
             else if(!flipped)
             {
@@ -40,23 +53,27 @@ public class Tile extends JButton
                 {
                     System.out.println("lost");
                     setBackground(Color.red);
+                    return value;
                 }
                 else if(value==0)
                 {
                     flipped=true;
                     setBackground(Color.blue);
+                    return value;
                 }
                 else if(value>0)
                 {
                     setText(""+ value);
                     setBackground(Color.blue);
                     flipped=true;
+                    return value;
                 }
             }
-            else if(value!=-1&&flipped)
-            {
-            
-            }
         }
+        return -2;
     }
+    
+    
+    
+    
 }

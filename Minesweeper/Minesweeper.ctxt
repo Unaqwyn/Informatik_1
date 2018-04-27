@@ -4,4 +4,6 @@ comment1.params=
 comment1.target=Minesweeper()
 comment2.params=screenType
 comment2.target=Minesweeper(int)
-numComments=3
+comment3.params=screenType
+comment3.target=void\ setScreen(int)
+numComments=4

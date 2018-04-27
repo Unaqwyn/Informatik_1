@@ -10,7 +10,7 @@ public class Minesweeper extends JFrame
     {
         System.out.print('\u000C');
         bombMap=new BombMap();
-        screen=new ScreenDiff();
+        screen=new ScreenDiff(this);
         add(screen);
         setPreferredSize(Const.prefSize);
         
@@ -21,10 +21,11 @@ public class Minesweeper extends JFrame
     
     public Minesweeper(int screenType)
     {
+        System.out.print('\u000C');
         bombMap=new BombMap();
         if(screenType==0)
         {
-            screen=new ScreenDiff();
+            screen=new ScreenDiff(this);
         }
         else if(screenType==1)
         {
@@ -36,6 +37,29 @@ public class Minesweeper extends JFrame
         }
         add(screen);
         setPreferredSize(Const.prefSize);
+        
+        pack();
+        setVisible(true);
+    }
+    
+    public void setScreen(int screenType)
+    {
+        remove(screen);
+        if(screenType==0)
+        {
+            screen=new ScreenDiff(this);
+        }
+        else if(screenType==1)
+        {
+            bombMap=new BombMap();
+            screen=new ScreenPlay(bombMap);
+        }
+        else if(screenType==2)
+        {
+            screen=new ScreenEnd();
+        }
+        add(screen);
+         setPreferredSize(Const.prefSize);
         
         pack();
         setVisible(true);

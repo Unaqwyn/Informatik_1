@@ -13,13 +13,14 @@ public class PlayUI extends JPanel
        setBounds(0,0,Const.sizeX, Const.sizeY-Const.sizeX);
        setPreferredSize(new Dimension(Const.sizeX, Const.sizeY-Const.sizeX));
        
-       remaining=new JLabel("remaining" + 0);
+       remaining=new JLabel("remaining: " + 0);
        add(remaining);
        
        newGame=new JButton("new game");
        add(newGame);
        
        flag=new JButton("Flag");
+       flag.addActionListener(e->Const.flagging=!Const.flagging);
        add(flag);
     }
     

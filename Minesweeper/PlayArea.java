@@ -26,5 +26,44 @@ public class PlayArea extends JPanel
         }
     }
     
+    public void chord(int x, int y)
+    {
+        if(x>0&&y>0)
+        {
+            tiles[x-1][y-1].flip();
+        }
+        if(y>0)
+        {
+            tiles[x][y-1].flip();
+        }
+        if(x<Const.size-1&&y>0)
+        {
+            tiles[x+1][y-1].flip();
+        }
+        if(x>0)
+        {
+            tiles[x-1][y].flip();
+        }
+        if(x<Const.size-1)
+        {
+            tiles[x+1][y].flip();
+        }
+        if(x>0&& y<Const.size-1)
+        {
+            tiles[x-1][y+1].flip();
+        }
+        if(y<Const.size-1)
+        {
+            tiles[x][y+1].flip();
+        }
+        if(x<Const.size-1 && y<Const.size-1)
+        {
+            tiles[x+1][y+1].flip();
+        }
+    }
     
+    public void firstFlipped(int x, int y)
+    {
+        
+    }
 }

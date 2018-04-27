@@ -123,4 +123,13 @@ public class BombMap
         }
         return val;
     }
+    
+    public void setMap(int x, int y)
+    {
+        while(values[x][y]!=0)
+        {
+            generateBombs();
+            generateValues();
+        }
+    }
 }

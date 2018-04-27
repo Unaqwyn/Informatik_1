@@ -3,5 +3,5 @@ comment0.target=Tile
 comment1.params=value
 comment1.target=Tile(int)
 comment2.params=
-comment2.target=void\ flip()
+comment2.target=int\ flip()
 numComments=3
