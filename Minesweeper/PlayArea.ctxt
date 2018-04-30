@@ -1,9 +1,11 @@
 #BlueJ class context
 comment0.target=PlayArea
-comment1.params=bombMap
-comment1.target=PlayArea(BombMap)
+comment1.params=bombMap\ minesweeper
+comment1.target=PlayArea(BombMap,\ Minesweeper)
 comment2.params=x\ y
 comment2.target=void\ chord(int,\ int)
-comment3.params=x\ y
+comment3.params=a\ b
 comment3.target=void\ firstFlipped(int,\ int)
-numComments=4
+comment4.params=won
+comment4.target=void\ end(boolean)
+numComments=5

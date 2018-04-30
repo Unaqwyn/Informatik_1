@@ -7,73 +7,90 @@ public class Tile extends JButton
     private boolean flagged=false;
     private int value;
     private boolean flipped=false;
+    private PlayArea playarea;
+    private int x;
+    private int y;
     
-    public Tile(int value)
+    public Tile(int value, int x, int y, PlayArea playarea)
     {
-       int x=Const.sizeTiles;
+        this.x=x;
+        this.y=y;
+        this.playarea=playarea;
+       int size=Const.sizeTiles;
        this.value=value;
        setBackground(Color.gray);
-       setBounds(0,0,x,x);
+       setBounds(0,0,size,size);
        setPreferredSize(Const.prefSizeTile);
-       addActionListener(e->flip());
+       addActionListener(e->flip(false));
+       setForeground(Color.white);
       
     }
     
-    public int flip()
+    public void flip(boolean chording)
     {
-        if(Const.flagging)
+        if(!Const.firstFlipped)
+        {
+            playarea.firstFlipped(x,y);
+            Const.firstFlipped=true;
+            Const.tilesFlipped++;
+        }
+        else if(flipped&&!chording)
+        {
+            playarea.chord(x,y);
+        }
+        if(Const.flagging&&!chording)
         {
             if(flagged&&!flipped)
             {
                 setBackground(Color.gray);
                 flagged=false;
-                return -2;
             }
             else if(!flipped)
             {
                 setBackground(Color.black);
                 flagged=true;
-                return -2;
             }
         }
         else
         {
             if(flagged)
             {
-                return -2;
-            }
-            else if(!Const.firstFlipped)
-            {
-                Const.firstFlipped=true;
-                return -3;
+                
             }
             else if(!flipped)
             {
                 if(value==-1)
                 {
-                    System.out.println("lost");
+                    flipped=true;
                     setBackground(Color.red);
-                    return value;
+                    playarea.end(false);
                 }
                 else if(value==0)
                 {
                     flipped=true;
                     setBackground(Color.blue);
-                    return value;
+                    playarea.chord(x,y);
+                    Const.tilesFlipped++;
                 }
                 else if(value>0)
                 {
                     setText(""+ value);
                     setBackground(Color.blue);
                     flipped=true;
-                    return value;
+                    Const.tilesFlipped++;
                 }
             }
         }
-        return -2;
+        if(Const.winCon==Const.tilesFlipped)
+        {
+            playarea.end(true);
+        }
     }
     
-    
+    public void setValue(int val)
+    {
+        value=val;
+    }
     
     
 }

@@ -1,5 +1,5 @@
 #BlueJ class context
 comment0.target=ScreenPlay
-comment1.params=bombMap
-comment1.target=ScreenPlay(BombMap)
+comment1.params=bombMap\ minesweeper
+comment1.target=ScreenPlay(BombMap,\ Minesweeper)
 numComments=2

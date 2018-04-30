@@ -29,11 +29,11 @@ public class Minesweeper extends JFrame
         }
         else if(screenType==1)
         {
-            screen=new ScreenPlay(bombMap);
+            screen=new ScreenPlay(bombMap, this);
         }
         else if(screenType==2)
         {
-            screen=new ScreenEnd();
+            screen=new ScreenEnd(this);
         }
         add(screen);
         setPreferredSize(Const.prefSize);
@@ -52,11 +52,11 @@ public class Minesweeper extends JFrame
         else if(screenType==1)
         {
             bombMap=new BombMap();
-            screen=new ScreenPlay(bombMap);
+            screen=new ScreenPlay(bombMap, this);
         }
         else if(screenType==2)
         {
-            screen=new ScreenEnd();
+            screen=new ScreenEnd(this);
         }
         add(screen);
          setPreferredSize(Const.prefSize);

@@ -1,5 +1,9 @@
 #BlueJ class context
 comment0.target=PlayUI
-comment1.params=
-comment1.target=PlayUI()
-numComments=2
+comment1.params=minesweeper
+comment1.target=PlayUI(Minesweeper)
+comment2.params=
+comment2.target=void\ flagging()
+comment3.params=
+comment3.target=void\ newGame()
+numComments=4

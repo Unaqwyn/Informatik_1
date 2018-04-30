@@ -21,6 +21,8 @@ public class Const
     public static boolean flagging=false;
     public static boolean firstFlipped=false;
     public static Font font=new Font(20);
+    public static int winCon=size*size-bombs+1;
+    public static int tilesFlipped=0;
     
     public Const()
     {
@@ -36,6 +38,7 @@ public class Const
             size=8;
             sizeTiles=40;
             prefSizeTile=new Dimension(sizeTiles, sizeTiles);
+            winCon=size*size-bombs+1;
         }
         else if(diff==MEDIUM)
         {
@@ -44,6 +47,7 @@ public class Const
             sizeTiles=20;
             prefSizeTile=new Dimension(sizeTiles, sizeTiles);
             font=new Font(15);
+            winCon=size*size-bombs+1;
         }
         else if(diff==HARD)
         {
@@ -52,6 +56,14 @@ public class Const
             sizeTiles=10;
             prefSizeTile=new Dimension(sizeTiles, sizeTiles);
             font=new Font(10);
+            winCon=size*size-bombs+1;
         }
+    }
+    
+    public static void newGame()
+    {
+         flagging=false;
+         firstFlipped=false;
+         tilesFlipped=0;
     }
 }
